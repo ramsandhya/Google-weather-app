@@ -1,0 +1,20 @@
+<div class="sidebar">
+  <h2>Today's Temperature</h2>
+  <hr>
+  <div class="city" ng-repeat="city in result">
+    <p ng-click="city.infoWindowSidebar()">
+      <img class="sidebarIcon" ng-show="city.main.temp > 80" src="images/hot.png">
+      <img class="sidebarIcon" ng-show="city.main.temp >= 60 && city.main.temp <= 80" src="images/normal.png">
+      <img class="sidebarIcon" ng-show="city.main.temp < 60" src="images/cold.png">
+      <br>
+      {{city.name}}
+      <br>
+      {{city.main.temp}}°F
+      <br>
+      <a href="#/city/{{city.id}}">5 day forecast</a>
+    </p>
+    <hr>
+  </div>
+
+
+</div>

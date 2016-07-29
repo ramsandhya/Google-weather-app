@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <div id="back-button">
+    <p><a href="#/">« Home</a></p>
+  </div>
+  <h2>{{data.city.name}}</h2>
+  <h4>5 day forecast</h4>
+  <hr>
+  <div ng-repeat="result in data.list">
+    <img class="sidebarIcon" ng-show="result.main.temp > 80" src="images/hot.png">
+    <img class="sidebarIcon" ng-show="result.main.temp >= 60 && result.main.temp <= 80" src="images/normal.png">
+    <img class="sidebarIcon" ng-show="result.main.temp < 60" src="images/cold.png">
+    <br>
+    {{result.dt * 1000 | date: "MM-dd hh:mm"}}
+    <br>
+    temp: {{result.main.temp}}
+    <hr>
+  </div>
+</div>
